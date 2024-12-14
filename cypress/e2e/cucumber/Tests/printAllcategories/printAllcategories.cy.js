@@ -11,12 +11,18 @@ When("The user clicks on What's New on the navbar",()=>{
 
 Then("Categories in the New In Women section will be printed",()=>{
     cy.get("ul.items").eq(1).find("li.item").then((items)=>{
-        for(let i=0;i<items.length;i++){
-            cy.wrap(items[i])
+        const numberOfCategories = items.length;
+        let numPrintedCategories= 0;
+        cy.wrap(items).each((item, index) => {
+            cy.wrap(item)
             .invoke('text')
             .then((text)=>{
-            cy.log(`Category ${i + 1}: ${text.trim()}`)
-        })
-    }
-    })
-})
+                // categoriesText.push(text.trim());
+                cy.log(`Category ${index + 1}: ${text}`)
+                numPrintedCategories++;
+            });
+        }).then(() => {
+                cy.wrap(numPrintedCategories).should('eq', numberOfCategories);  
+            });
+        });
+      });
