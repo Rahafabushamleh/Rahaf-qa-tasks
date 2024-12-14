@@ -1,0 +1,106 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-11-30T18:55:57.874Z",
+    "end": "2024-11-30T18:56:15.468Z",
+    "duration": 17594,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "f0c8c3e8-002f-4776-82d7-c9e22b6b726b",
+      "title": "",
+      "fullFile": "cypress\\e2e\\class1\\createNewAccount.cy.js",
+      "file": "cypress\\e2e\\class1\\createNewAccount.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "2ee3c4fb-5453-4bda-b739-55ee389da063",
+          "title": "Login Functionality",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Check Functionality of Create New Account button - Only happy scenario",
+              "fullTitle": "Login Functionality Check Functionality of Create New Account button - Only happy scenario",
+              "timedOut": null,
+              "duration": 17332,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"/customer/account/create/\");\nconst emailNum = Math.floor(Math.random() * 1000);\ncy.get(\"#firstname\").type(\"Rahaf\");\ncy.get(\"#lastname\").type(\"Abushamleh\");\ncy.get(\"#email_address\").type(\"rahaf\" + emailNum + \"@gmail.com\");\ncy.get(\"#password\").type(\"rhf098/R\");\ncy.get(\"#password-confirmation\").type(\"rhf098/R\");\ncy.get(\"button\").contains(\"Create an Account\").click();\ncy.wait(1000); //الحملة الي تحت هاي بتوخد وقت لتطلع ما بتطلع ورا بس انتقل للصفحة التالية ، فاعطيته وقت زيادة مشان ما يعمل فيل\ncy.get(\"[role=alert\").should(\"be.visible\").and(\"contain\", \"Thank you for registering with Main Website Store.\");\ncy.get(\".page-title\").should(\"contain\", \"My Account\");\ncy.get(\".logged-in\").first().should(\"contain\", \"Welcome, Rahaf Abushamleh!\");\ncy.url().should('eq', \"https://magento.softwaretestingboard.com/customer/account/\");\n//الرابط بجيبه من صفحة السايبرس موجود فوق مكان ما فينا نجيب السيليكتور",
+              "err": {},
+              "uuid": "c0052a1e-6ff0-4630-a9b1-949e1b87b0f6",
+              "parentUUID": "2ee3c4fb-5453-4bda-b739-55ee389da063",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "c0052a1e-6ff0-4630-a9b1-949e1b87b0f6"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 17332,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/myReporter",
+        "overwrite": false,
+        "html": true,
+        "JSON": false,
+        "timestamp": "mmddyyy-HHMMss"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

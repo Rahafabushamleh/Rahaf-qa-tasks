@@ -1,0 +1,125 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-11-30T18:53:59.375Z",
+    "end": "2024-11-30T18:55:28.420Z",
+    "duration": 89045,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "342ec0da-a416-464a-949e-d8687ca75830",
+      "title": "",
+      "fullFile": "cypress\\e2e\\class2\\task2.cy.js",
+      "file": "cypress\\e2e\\class2\\task2.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "b7e1d60a-9c74-4d8b-8275-d4d9a5723cb5",
+          "title": "Cart Functionality",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Validate that the user can update products from the shopping cart .",
+              "fullTitle": "Cart Functionality Validate that the user can update products from the shopping cart .",
+              "timedOut": null,
+              "duration": 66697,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"/\");\ncy.get(\".action.showcart\").click();\ncy.contains(\"View and Edit Cart\").click({\n  force: true\n});\ncy.get(\"[title='Edit item parameters']\").click();\ncy.get(\"[option-label=M]\").click();\ncy.get(\"#qty\").clear().type(\"2\");\ncy.get(\"#product-updatecart-button\").click();\ncy.get(\".counter-number\").should(\"contain\", \"2\");\ncy.get(\".success.message\").should(\"contain\", \"Hero Hoodie was updated in your shopping cart.\");",
+              "err": {},
+              "uuid": "fb2f1d9f-81b0-46cf-915b-708f85bbce96",
+              "parentUUID": "b7e1d60a-9c74-4d8b-8275-d4d9a5723cb5",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Validate that the user can submit a review on the product page .",
+              "fullTitle": "Cart Functionality Validate that the user can submit a review on the product page .",
+              "timedOut": null,
+              "duration": 21580,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"/\");\ncy.get(\".product-image-photo\").first().click();\ncy.get(\".action.add\").click();\ncy.wait(3000);\ncy.get(\"[title='3 stars']\").click({\n  force: true\n});\ncy.get(\"#nickname_field\").clear().type(\"Rahaf\");\ncy.get(\"#summary_field\").clear().type(\"Good product !\");\ncy.get(\"#review_field\").clear().type(\"What a versatile shirt! Not only does it feel very soft compared to my old worn out polos, but it also does the job promised.\");\ncy.contains(\"Submit Review\").click();\ncy.get(\".success.message\").should(\"contain\", \"You submitted your review for moderation.\");",
+              "err": {},
+              "uuid": "8c04f5e1-1374-4a3b-a695-64dd2666ba97",
+              "parentUUID": "b7e1d60a-9c74-4d8b-8275-d4d9a5723cb5",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "fb2f1d9f-81b0-46cf-915b-708f85bbce96",
+            "8c04f5e1-1374-4a3b-a695-64dd2666ba97"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 88277,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/myReporter",
+        "overwrite": false,
+        "html": true,
+        "JSON": false,
+        "timestamp": "mmddyyy-HHMMss"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

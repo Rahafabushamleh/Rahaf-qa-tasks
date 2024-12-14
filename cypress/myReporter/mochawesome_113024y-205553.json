@@ -1,0 +1,106 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-11-30T18:55:33.420Z",
+    "end": "2024-11-30T18:55:53.796Z",
+    "duration": 20376,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "4b86e095-4954-4320-a2d6-6dcc56a9a9be",
+      "title": "",
+      "fullFile": "cypress\\e2e\\class1\\cartFunctionality.cy.js",
+      "file": "cypress\\e2e\\class1\\cartFunctionality.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "16dbabf1-751b-46fb-8b87-717e826b2f52",
+          "title": "Cart Functionality",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Validate that the user can add products to the shopping cart",
+              "fullTitle": "Cart Functionality Validate that the user can add products to the shopping cart",
+              "timedOut": null,
+              "duration": 20210,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"/\");\ncy.get(\"#search\").clear().type(\"bag{enter}\");\ncy.get(\".product-image-photo\").first().click();\ncy.get(\"#qty\").clear().type(\"2\");\ncy.get(\"#product-addtocart-button\").click();\ncy.get(\".counter.qty\").should(\"be.visible\", \"2\");\ncy.get(\".success.message\").should(\"contain\", \"You added Push It Messenger Bag to your \");",
+              "err": {},
+              "uuid": "6015eebf-741e-48b8-a2f1-32911da2379f",
+              "parentUUID": "16dbabf1-751b-46fb-8b87-717e826b2f52",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "6015eebf-741e-48b8-a2f1-32911da2379f"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 20210,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/myReporter",
+        "overwrite": false,
+        "html": true,
+        "JSON": false,
+        "timestamp": "mmddyyy-HHMMss"
+      },
+      "version": "6.2.0"
+    }
+  }
+}
